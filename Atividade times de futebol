@@ -1,0 +1,91 @@
+/ / Classe Jogador
+class Jogador {
+    private String nome;
+    private String posicao;
+    private int numero;
+
+    public Jogador(String nome, String posicao, int numero) {
+        this.nome = nome;
+        this.posicao = posicao;
+        this.numero = numero;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getPosicao() {
+        return posicao;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+}
+
+// Classe Premiação
+class Premiacao {
+    private String titulo;
+    private int ano;
+
+    public Premiacao(String titulo, int ano) {
+        this.titulo = titulo;
+        this.ano = ano;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+}
+
+// Classe TimeDeFutebol
+class TimeDeFutebol {
+    private String nome;
+    private List <Jogador> jogadores;
+    private List <Premiacao> premiacoes;
+
+    public TimeDeFutebol(String nome) {
+        this.nome = nome;
+        this.jogadores = new ArrayList<>();
+        this.premiacoes = new ArrayList<>();
+    }
+
+    public void adicionarJogador(Jogador jogador) {
+        jogadores.add(jogador);
+    }
+
+    public void adicionarPremiacao(Premiacao premiacao) {
+        premiacoes.add(premiacao);
+    }
+
+    public void exibirTime() {
+        System.out.println("Time: " + nome);
+        System.out.println("Jogadores:");
+        for (Jogador jogador : jogadores) {
+            System.out.println("  - " + jogador);
+        }
+        System.out.println("Premiações:");
+        for (Premiacao premiacao : premiacoes) {
+            System.out.println("  - " + premiacao);
+        }
+    }
+}
+
+        // Adicionar os jogadores
+        time.adicionarJogador(new Jogador("Lucas Rocha", "Atacante", 9));
+        time.adicionarJogador(new Jogador("Lucas de Sousa", "Meio-Campo", 10));
+        time.adicionarJogador(new Jogador("Lucão", "Zagueiro", 4));
+
+        // Adicionando premiações
+        time.adicionarPremiacao(new Premiacao("Campeonato Brasileiro", 2025));
+        time.adicionarPremiacao(new Premiacao("Copa do Brasil", 2025));
+
+    
+    }
+}
